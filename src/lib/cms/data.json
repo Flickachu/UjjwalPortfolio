@@ -1,0 +1,447 @@
+{
+  "site": {
+    "title": "UJJWAL SAIKIA",
+    "description": "Web design & strategy partner for founders and brands.",
+    "logo": "/favicon.svg",
+    "favicon": "/favicon.svg",
+    "accentColor": "#D9FF00",
+    "navLinks": [
+      {
+        "label": "WORK",
+        "href": "/#work"
+      },
+      {
+        "label": "SERVICES",
+        "href": "/services"
+      },
+      {
+        "label": "ABOUT",
+        "href": "/about"
+      },
+      {
+        "label": "INSIGHTS",
+        "href": "/insights"
+      }
+    ],
+    "ctaText": "BOOK A STRATEGY CALL"
+  },
+  "pages": {
+    "home": {
+      "seo": {
+        "title": "Ujjwal Saikia | High Performance Web Strategy",
+        "description": "Custom websites that win trust before the first call."
+      },
+      "sections": [
+        {
+          "type": "hero",
+          "id": "hero",
+          "eyebrow": "WEB DESIGN & STRATEGY PARTNER",
+          "title": "WEBSITES THAT WIN TRUST BEFORE THE FIRST CALL.",
+          "lead": "Strategy-led websites for founders and brands who want more than pretty — they want performance.",
+          "cta": "BOOK A FREE STRATEGY CALL",
+          "features": [
+            "Strategy first",
+            "Conversion focused",
+            "Fast & maintainable",
+            "Built to scale"
+          ]
+        },
+        {
+          "type": "logo-strip",
+          "id": "logos",
+          "items": [
+            "LUMINARY",
+            "FLOWMATCH",
+            "FLICKCACHE",
+            "NORTHION",
+            "HIGHLINE",
+            "STUDIO-SIX"
+          ]
+        },
+        {
+          "type": "problem-grid",
+          "id": "problem",
+          "eyebrow": "01 / THE REAL PROBLEM",
+          "title": "A WEBSITE SHOULD GROW YOUR BUSINESS, NOT GET IN THE WAY.",
+          "lead": "If your site looks generic, loads slow, or doesn't communicate value, you're leaving trust—and revenue—on the table.",
+          "cards": [
+            {
+              "id": "01",
+              "title": "You lose potential clients in the first few seconds."
+            },
+            {
+              "id": "02",
+              "title": "Your message is unclear or buried in clutter."
+            },
+            {
+              "id": "03",
+              "title": "It doesn't build trust or stand out from competitors."
+            },
+            {
+              "id": "04",
+              "title": "It wasn't built to convert, scale, or adapt."
+            }
+          ]
+        },
+        {
+          "type": "approach",
+          "id": "approach",
+          "eyebrow": "02 / OUR APPROACH",
+          "title": "STRATEGY. DESIGN. DEVELOPMENT. ALL WORKING TOGETHER.",
+          "steps": [
+            {
+              "id": "01",
+              "label": "DISCOVER",
+              "text": "We dive deep into your business, audience, and goals."
+            },
+            {
+              "id": "02",
+              "label": "STRATEGIZE",
+              "text": "We map the right structure, message, and conversion path."
+            },
+            {
+              "id": "03",
+              "label": "DESIGN",
+              "text": "We craft a clean, engaging experience that builds instant trust."
+            },
+            {
+              "id": "04",
+              "label": "LAUNCH & OPTIMIZE",
+              "text": "We launch fast, then refine based on real data and results."
+            }
+          ]
+        },
+        {
+          "type": "work-grid",
+          "id": "work",
+          "eyebrow": "03 / SELECTED WORK",
+          "title": "Websites that drive real results.",
+          "projects": [
+            {
+              "slug": "flickachu",
+              "title": "FLICKACHU",
+              "description": "Design that feels like home.",
+              "tags": [
+                "BRANDING",
+                "WEB DESIGN"
+              ],
+              "image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1400",
+              "client": "FLICKACHU",
+              "clientDesc": "Interactive furniture brand",
+              "link": "https://flickachu.vercel.app/"
+            },
+            {
+              "slug": "flowmatch",
+              "title": "FLOWMATCH",
+              "description": "Automotive marketplace platform.",
+              "tags": [
+                "MARKETPLACE",
+                "UI/UX"
+              ],
+              "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1400",
+              "client": "FLOWMATCH",
+              "clientDesc": "Marketplace platform",
+              "link": "https://flow-match-flickachus-projects.vercel.app/"
+            }
+          ]
+        },
+        {
+          "type": "services",
+          "id": "process",
+          "eyebrow": "04 / OUR PROCESS",
+          "title": "A CLEAR PROCESS. ZERO GUESSWORK.",
+          "lead": "",
+          "items": [
+            {
+              "title": "DISCOVERY",
+              "text": "Understand your business, audience, and goals."
+            },
+            {
+              "title": "RESEARCH",
+              "text": "Market analysis, user insights, competitor review."
+            },
+            {
+              "title": "STRATEGIC PLANNING",
+              "text": "Craft the blueprint: content, UX, site architecture, and flow."
+            },
+            {
+              "title": "DESIGN & DEVELOP",
+              "text": "Design with purpose. Build for speed, scale, and flexibility."
+            },
+            {
+              "title": "LAUNCH & GROW",
+              "text": "QA, performance optimization, and continuous improvement."
+            }
+          ]
+        },
+        {
+          "type": "testimonials",
+          "id": "testimonials",
+          "eyebrow": "05 / CLIENT LOVE",
+          "title": "Kind words. Real impact.",
+          "items": [
+            {
+              "name": "ISABELLA ROSSI",
+              "quote": "The site feels like we stepped into a new tier. It's faster, clearer, and we're finally getting the right inquiries.",
+              "role": "Founder, Laminato Gallery",
+              "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=150"
+            },
+            {
+              "name": "ANTHONY COLE",
+              "quote": "Clear process, exceptional communication, and a website that actually brings in business.",
+              "role": "CEO, FlowMatch",
+              "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=150"
+            },
+            {
+              "name": "DANIEL VERDA",
+              "quote": "Professional, fast, and insanely good at what they do.",
+              "role": "Founder, Flickcache",
+              "avatar": "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=150"
+            }
+          ]
+        },
+        {
+          "type": "closing",
+          "id": "closing",
+          "eyebrow": "06 / FAQ",
+          "title": "READY FOR A WEBSITE THAT ACTUALLY BRINGS IN CLIENTS?",
+          "lead": "Book a free strategy call and let's map out your next high-performing website.",
+          "cta": "BOOK A FREE CALL",
+          "faqTitle": "QUESTIONS? WE'VE GOT ANSWERS.",
+          "faqs": [
+            {
+              "q": "What kind of websites do you build?",
+              "a": "We focus on high-performance SvelteKit marketing sites and web apps."
+            },
+            {
+              "q": "Do you only design, or also develop?",
+              "a": "Both. We handle the entire process from strategy to launch."
+            },
+            {
+              "q": "How long does a project take?",
+              "a": "Typically 3-4 weeks from research to launch, depending on complexity."
+            },
+            {
+              "q": "Will I be able to edit my site?",
+              "a": "Yes, we provide a custom, easy-to-use CMS for your team."
+            }
+          ]
+        }
+      ]
+    },
+    "about": {
+      "seo": {
+        "title": "About - Ujjwal Saikia Studio",
+        "description": "The strategy behind the work."
+      },
+      "sections": [
+        {
+          "type": "hero",
+          "id": "about-hero",
+          "eyebrow": "ABOUT THE STUDIO",
+          "title": "STRATEGY-FIRST DESIGN FOR AMBITIOUS BRANDS.",
+          "lead": "We help businesses scale by creating websites that act as their best salesperson.",
+          "cta": "VIEW OUR WORK",
+          "features": [
+            "Deep research",
+            "High-craft UI",
+            "Performance builds"
+          ]
+        },
+        {
+          "type": "approach",
+          "id": "about-approach",
+          "eyebrow": "MY PHILOSOPHY",
+          "title": "DESIGNING WITH PURPOSE.",
+          "steps": [
+            {
+              "id": "01",
+              "label": "EMPATHY",
+              "text": "Understanding the user is the first step to great design."
+            },
+            {
+              "id": "02",
+              "label": "CLARITY",
+              "text": "Simplifying complex problems into elegant solutions."
+            },
+            {
+              "id": "03",
+              "label": "CRAFT",
+              "text": "Paying attention to every detail, from typography to performance."
+            }
+          ]
+        }
+      ]
+    },
+    "services": {
+      "seo": {
+        "title": "Services - Ujjwal Saikia Studio",
+        "description": "Our capabilities and process."
+      },
+      "sections": [
+        {
+          "type": "hero",
+          "id": "services-hero",
+          "eyebrow": "OUR CAPABILITIES",
+          "title": "WE BUILD WEBSITES THAT BUILD BUSINESSES.",
+          "lead": "From deep research to high-craft development, we handle the full spectrum of web creation.",
+          "cta": "BOOK A CALL",
+          "features": [
+            "UI/UX Design",
+            "Custom Svelte Builds",
+            "Performance Optimization"
+          ]
+        },
+        {
+          "type": "services",
+          "id": "services-list",
+          "eyebrow": "WHAT I DO",
+          "title": "COMPREHENSIVE DIGITAL SOLUTIONS.",
+          "items": [
+            {
+              "title": "FRONTEND DEVELOPMENT",
+              "text": "Building fast, accessible, and responsive interfaces using SvelteKit, React, and modern web standards."
+            },
+            {
+              "title": "UI/UX DESIGN",
+              "text": "Crafting intuitive user experiences and beautiful interfaces that engage and convert."
+            },
+            {
+              "title": "WEB STRATEGY",
+              "text": "Aligning your digital presence with your business goals to maximize impact."
+            }
+          ]
+        }
+      ]
+    },
+    "contact": {
+      "seo": {
+        "title": "Contact - Ujjwal Saikia Studio",
+        "description": "Let's build something great together."
+      },
+      "sections": [
+        {
+          "type": "hero",
+          "id": "contact-hero",
+          "eyebrow": "GET IN TOUCH",
+          "title": "READY TO START YOUR NEXT PROJECT?",
+          "lead": "Drop us a line and let's discuss how we can help your business grow.",
+          "cta": "SEND MESSAGE",
+          "features": [
+            "Fast response",
+            "Detailed strategy",
+            "Clear pricing"
+          ]
+        },
+        {
+          "type": "closing",
+          "id": "contact-closing",
+          "eyebrow": "LET'S TALK",
+          "title": "REACH OUT TODAY.",
+          "lead": "I'm currently available for new projects and collaborations.",
+          "cta": "EMAIL ME",
+          "faqTitle": "COMMON INQUIRIES",
+          "faqs": [
+            {
+              "q": "Are you taking new clients?",
+              "a": "Yes, I am currently accepting new projects."
+            },
+            {
+              "q": "What is your hourly rate?",
+              "a": "I prefer project-based pricing to ensure alignment on goals."
+            }
+          ]
+        }
+      ]
+    },
+    "projects": {
+      "seo": {
+        "title": "Selected Work - Ujjwal Saikia Studio",
+        "description": "Case studies and concepts."
+      },
+      "sections": [
+        {
+          "type": "hero",
+          "id": "projects-hero",
+          "eyebrow": "SELECTED WORK",
+          "title": "CASE STUDIES & CONCEPTS.",
+          "lead": "A collection of premium websites, brand systems, and strategic digital experiences.",
+          "cta": "CONTACT US",
+          "features": [
+            "UI/UX Design",
+            "Brand Strategy",
+            "Web Development"
+          ]
+        }
+      ]
+    },
+    "insights": {
+      "seo": {
+        "title": "Insights - Ujjwal Saikia Studio",
+        "description": "Thoughts on strategy, design, and web performance."
+      },
+      "sections": [
+        {
+          "type": "hero",
+          "id": "insights-hero",
+          "eyebrow": "INSIGHTS & ARTICLES",
+          "title": "THOUGHTS ON STRATEGY, DESIGN, AND WEB PERFORMANCE.",
+          "lead": "Deep dives into how we build high-performing websites and digital experiences.",
+          "cta": "READ MORE",
+          "features": [
+            "Web Strategy",
+            "Performance",
+            "Design Systems"
+          ]
+        }
+      ]
+    }
+  },
+  "projects": [
+    {
+      "slug": "flickachu",
+      "title": "FLICKACHU",
+      "description": "Design that feels like home.",
+      "tags": [
+        "BRANDING",
+        "WEB DESIGN"
+      ],
+      "image": "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&q=80&w=1400",
+      "client": "FLICKACHU",
+      "clientDesc": "Interactive furniture brand",
+      "link": "https://flickachu.vercel.app/"
+    },
+    {
+      "slug": "flowmatch",
+      "title": "FLOWMATCH",
+      "description": "Automotive marketplace platform.",
+      "tags": [
+        "MARKETPLACE",
+        "UI/UX"
+      ],
+      "image": "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=1400",
+      "client": "FLOWMATCH",
+      "clientDesc": "Marketplace platform",
+      "link": "https://flow-match-flickachus-projects.vercel.app/"
+    }
+  ],
+  "footer": {
+    "heading": "Sharp websites. Calm systems. Measurable outcomes.",
+    "email": "ujjwalsaikia@outlook.in",
+    "bottomText": "Ujjwal Saikia.",
+    "socials": [
+      {
+        "label": "LinkedIn",
+        "url": "#"
+      },
+      {
+        "label": "Dribbble",
+        "url": "#"
+      },
+      {
+        "label": "Instagram",
+        "url": "#"
+      }
+    ]
+  }
+}

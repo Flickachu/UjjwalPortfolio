@@ -1,0 +1,10 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "npx svelte-kit": true,
+        "/^node -e \"console\\.log\\(require\\('\\./node_modules/@sveltejs/kit/package\\.json'\\)\\.version\\)\"$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    },
+    "css.lint.unknownAtRules": "ignore"
+}
