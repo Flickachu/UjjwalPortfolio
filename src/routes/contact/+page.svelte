@@ -1,6 +1,7 @@
 <script>
   import { cms } from '$lib/cms/cms.svelte.js';
   import CmsRenderer from '$lib/cms/CmsRenderer.svelte';
+  import SEO from '$lib/components/SEO.svelte';
 
   let status = $state('idle'); // idle, sending, success, error
 
@@ -12,9 +13,10 @@
   }
 </script>
 
-<svelte:head>
-  <title>{cms.data?.pages?.contact?.seo?.title || 'Contact'}</title>
-</svelte:head>
+<SEO 
+  title={cms.data?.pages?.contact?.seo?.title || 'Contact'}
+  description={cms.data?.pages?.contact?.seo?.description}
+/>
 
 <main>
   {#if cms.data?.pages?.contact}

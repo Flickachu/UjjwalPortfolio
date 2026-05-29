@@ -4,7 +4,7 @@
 
 <article class="work-card" style="--delay: {index * 0.1}s">
   <div class="card-visual">
-    <img src={project.image} alt={project.client || project.title} />
+    <img src={project.image} alt={project.description ? `${project.title}: ${project.description}` : `Project image for ${project.title}`} />
     <div class="card-overlay always-visible">
       <div class="overlay-top">
         <span class="number">{String(index + 1).padStart(2, '0')} — {project.title}</span>

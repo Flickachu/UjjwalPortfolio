@@ -2,13 +2,15 @@
   import ProjectCard from '$lib/components/ProjectCard.svelte';
   import { cms } from '$lib/cms/cms.svelte.js';
   import CmsRenderer from '$lib/cms/CmsRenderer.svelte';
+  import SEO from '$lib/components/SEO.svelte';
 
   let projects = $derived(cms.data?.projects || []);
 </script>
 
-<svelte:head>
-  <title>{cms.data?.pages?.projects?.seo?.title || 'Projects'}</title>
-</svelte:head>
+<SEO 
+  title={cms.data?.pages?.projects?.seo?.title || 'Projects'}
+  description={cms.data?.pages?.projects?.seo?.description}
+/>
 
 <main>
   {#if cms.data?.pages?.projects}

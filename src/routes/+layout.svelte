@@ -7,6 +7,7 @@
   import Nav from '$lib/components/Nav.svelte';
   import Analytics from '$lib/components/Analytics.svelte';
   import Footer from '$lib/components/Footer.svelte';
+  import SEO from '$lib/components/SEO.svelte';
   import '../app.css';
 
   let { children } = $props();
@@ -38,13 +39,7 @@
   });
 </script>
 
-<svelte:head>
-  <title>{cms.data?.site?.title || 'Portfolio'} - {cms.data?.site?.description || ''}</title>
-  <meta name="description" content={cms.data?.site?.description || ''} />
-  <link rel="icon" href={cms.data?.site?.favicon || '/favicon.png'} />
-  <meta property="og:title" content={cms.data?.site?.title || 'Portfolio'} />
-  <meta property="og:description" content={cms.data?.site?.description || ''} />
-</svelte:head>
+<SEO />
 
 <Analytics />
 

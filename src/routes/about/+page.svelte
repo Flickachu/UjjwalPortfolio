@@ -1,12 +1,13 @@
 <script>
   import { cms } from '$lib/cms/cms.svelte.js';
   import CmsRenderer from '$lib/cms/CmsRenderer.svelte';
+  import SEO from '$lib/components/SEO.svelte';
 </script>
 
-<svelte:head>
-  <title>{cms.data?.pages?.about?.seo?.title || 'About - Studio'}</title>
-  <meta name="description" content={cms.data?.pages?.about?.seo?.description} />
-</svelte:head>
+<SEO 
+  title={cms.data?.pages?.about?.seo?.title || 'About - Studio'}
+  description={cms.data?.pages?.about?.seo?.description}
+/>
 
 <main>
   {#if cms.data?.pages?.about}

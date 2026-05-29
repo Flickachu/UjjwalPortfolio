@@ -1,4 +1,5 @@
 <script>
+  import { enhance } from '$app/forms';
   import { cms } from '$lib/cms/cms.svelte.js';
   import CmsRenderer from '$lib/cms/CmsRenderer.svelte';
   import Nav from '$lib/components/Nav.svelte';
@@ -11,6 +12,11 @@
   let saving = $state(false);
   let status = $state('');
 
+  let pageKey = $derived(activeTab === 'projects-page' ? 'projects' : activeTab);
+  
+  /** @type {any} */
+  let activePageData = $derived(cms.data?.pages ? (/** @type {any} */ (cms.data.pages))[pageKey] : null);
+
   async function handleSave() {
     saving = true;
     status = 'Saving...';
@@ -21,9 +27,8 @@
   }
 
   function addSection() {
-    const page = activeTab;
-    if (!cms.data.pages[page]) return;
-    cms.data.pages[page].sections.push({
+    if (!activePageData) return;
+    activePageData.sections.push({
       type: 'hero',
       id: `section-${Date.now()}`,
       eyebrow: 'NEW SECTION',
@@ -43,9 +48,9 @@
       description: 'Project description...',
       link: '',
       tags: ['SvelteKit', 'UI/UX'],
-      content: '<p>Project content...</p>',
       image: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=1400',
-      date: new Date().toISOString().split('T')[0]
+      client: '',
+      clientDesc: ''
     });
   }
 </script>
@@ -78,6 +83,7 @@
       <div class="cms-nav-group">Config</div>
       <button class:active={activeTab === 'site'} onclick={() => activeTab = 'site'}>Site Settings</button>
       <button class:active={activeTab === 'seo'} onclick={() => activeTab = 'seo'}>SEO & Meta</button>
+      <button class:active={activeTab === 'settings'} onclick={() => activeTab = 'settings'}>Account Settings</button>
     </nav>
 
     <div class="cms-sidebar-footer">
@@ -221,7 +227,33 @@
               </label>
             </div>
          </div>
-      {:else if cms.data?.pages[activeTab === 'projects-page' ? 'projects' : activeTab]}
+      {:else if activeTab === 'settings'}
+         <div class="cms-settings-grid">
+            <div class="panel">
+              <h3>Account & Security</h3>
+              
+              <form method="POST" action="?/changePassword" use:enhance={() => {
+                return async ({ result, update }) => {
+                  if (result.type === 'success') alert('Password changed successfully!');
+                  else if (result.type === 'failure') alert('Error: ' + result.data?.error);
+                  await update();
+                };
+              }} class="password-form">
+                <label>
+                  <span>New Password</span>
+                  <input type="password" name="newPassword" placeholder="••••••••" required minlength="6" class="admin-input" />
+                </label>
+                <button type="submit" class="btn btn-primary" style="margin-top: 12px; width: 100%;">Update Password</button>
+              </form>
+
+              <hr style="border-color: rgba(255,255,255,0.05); margin: 32px 0;" />
+              
+              <form method="POST" action="?/logout">
+                <button type="submit" class="btn danger" style="width: 100%;">Logout</button>
+              </form>
+            </div>
+         </div>
+      {:else if activePageData}
         <div class="cms-live-page">
           {#if viewMode === 'preview'}
             <iframe src={activeTab === 'home' ? '/' : activeTab === 'about' ? '/about' : activeTab === 'contact' ? '/contact' : activeTab === 'blog' ? '/blog' : activeTab === 'projects-page' ? '/projects' : '/'} title="Site Preview" class="cms-preview-iframe"></iframe>
@@ -229,7 +261,7 @@
             <div class="admin-nav-wrapper">
               <Nav />
             </div>
-            <CmsRenderer bind:sections={cms.data.pages[activeTab === 'projects-page' ? 'projects' : activeTab].sections} page={activeTab === 'projects-page' ? 'projects' : activeTab} />
+            <CmsRenderer bind:sections={activePageData.sections} page={pageKey} />
             <div class="cms-admin-controls-overlay">
               <button class="btn btn-primary" onclick={addSection}>+ Add Section to {activeTab}</button>
             </div>
@@ -526,5 +558,21 @@
     font-weight: 800;
     text-transform: uppercase;
     color: #444;
+  }
+
+  .admin-input {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.1);
+    color: white;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.9rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  .admin-input:focus {
+    outline: none;
+    border-color: var(--accent);
   }
 </style>

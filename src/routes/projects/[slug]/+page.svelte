@@ -1,17 +1,16 @@
 <script>
+  import SEO from '$lib/components/SEO.svelte';
   export let data;
   const { project } = data;
 </script>
 
-<svelte:head>
-  <title>{project.title} - Ujjwal Saikia</title>
-  <meta name="description" content={project.description} />
-  <meta property="og:title" content={project.title} />
-  <meta property="og:description" content={project.description} />
-  {#if project.image}
-    <meta property="og:image" content={project.image} />
-  {/if}
-</svelte:head>
+<SEO 
+  title={project.title}
+  description={project.description}
+  image={project.image}
+  type="Article"
+  article={true}
+/>
 
 <article class="project-detail">
   <div class="section-shell detail-hero">
