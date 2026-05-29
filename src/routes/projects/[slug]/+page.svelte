@@ -1,16 +1,7 @@
 <script>
-  import SEO from '$lib/components/SEO.svelte';
   export let data;
   const { project } = data;
 </script>
-
-<SEO 
-  title={project.title}
-  description={project.description}
-  image={project.image}
-  type="Article"
-  article={true}
-/>
 
 <article class="project-detail">
   <div class="section-shell detail-hero">

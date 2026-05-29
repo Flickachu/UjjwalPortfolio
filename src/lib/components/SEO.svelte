@@ -2,51 +2,75 @@
   import { page } from '$app/stores';
   import { cms } from '$lib/cms/cms.svelte.js';
 
-  let { 
-    title = '', 
-    description = '', 
-    image = '', 
-    type = 'WebSite',
-    article = false
-  } = $props();
+  let path = $derived($page.url.pathname);
+  let isProject = $derived(path.startsWith('/projects/') && path.length > 10);
+  let projectSlug = $derived(isProject ? path.split('/').pop() : null);
+  let projectData = $derived(isProject ? cms.data?.projects?.find(p => p.slug === projectSlug) : null);
 
-  // Fallback to global site settings if page-specific props aren't provided
-  let globalTitle = $derived(cms.data?.site?.title || 'Portfolio');
-  let globalDesc = $derived(cms.data?.site?.description || '');
+  let pageKey = $derived(
+    path === '/' ? 'home' : 
+    path.replace('/', '')
+  );
+
+  let pageSeo = $derived(cms.data?.pages?.[pageKey]?.seo);
+
+  let globalTitle = 'Ujjwal Saikia | Web Designer & Digital Strategist';
+  let globalDesc = 'Portfolio of Ujjwal Saikia, a web designer and digital strategist creating high-performance websites, conversion systems, and brand experiences for modern businesses.';
   
-  let finalTitle = $derived(title ? `${title} | ${globalTitle}` : globalTitle);
-  let finalDesc = $derived(description || globalDesc);
+  let finalTitle = $derived(
+    isProject ? `${projectData?.title} | Ujjwal Saikia` :
+    (pageSeo?.title || globalTitle)
+  );
+
+  let finalDesc = $derived(
+    isProject ? projectData?.description :
+    (pageSeo?.description || globalDesc)
+  );
   
-  // Base domain should be injected from env, using hardcoded fallback for now
   const domain = 'https://ujjwal-portfolio.vercel.app';
   
-  let finalImage = $derived(image || `${domain}/favicon.svg`); 
-  let url = $derived(`${domain}${$page.url.pathname}`);
+  let image = $derived(isProject ? projectData?.image : '/og/home.jpg');
+  let finalImage = $derived(image?.startsWith('http') ? image : `${domain}${image}`); 
+  let url = $derived(`${domain}${path}`);
 
-  // Generate JSON-LD Schema
-  let schemaData = $derived({
-    "@context": "https://schema.org",
-    "@type": type,
-    "name": finalTitle,
-    "url": url,
-    "description": finalDesc,
-    "image": finalImage,
-    ...(article && {
-      "headline": title,
+  // Schema
+  let schemaData = $derived(
+    isProject ? {
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": finalTitle,
+      "image": finalImage,
+      "url": url,
+      "description": finalDesc,
       "author": {
         "@type": "Person",
-        "name": "Ujjwal Saikia"
+        "name": "Ujjwal Saikia",
+        "url": domain
       },
       "publisher": {
-        "@type": "Organization",
-        "name": globalTitle,
-        "logo": {
-          "@type": "ImageObject",
-          "url": `${domain}/favicon.svg`
-        }
+        "@type": "Person",
+        "name": "Ujjwal Saikia",
+        "jobTitle": "Web Designer & Digital Strategist",
+        "url": domain,
+        "sameAs": [
+          "https://linkedin.com/in/ujjwalsaikia",
+          "https://github.com/flickachu"
+        ]
       }
-    })
-  });
+    } : {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Ujjwal Saikia",
+      "jobTitle": "Web Designer & Digital Strategist",
+      "url": domain,
+      "description": finalDesc,
+      "image": finalImage,
+      "sameAs": [
+        "https://linkedin.com/in/ujjwalsaikia",
+        "https://github.com/flickachu"
+      ]
+    }
+  );
 </script>
 
 <svelte:head>
@@ -59,7 +83,7 @@
   <link rel="canonical" href={url} />
 
   <!-- Open Graph / Facebook -->
-  <meta property="og:type" content={article ? 'article' : 'website'} />
+  <meta property="og:type" content={isProject ? 'article' : 'website'} />
   <meta property="og:url" content={url} />
   <meta property="og:title" content={finalTitle} />
   <meta property="og:description" content={finalDesc} />

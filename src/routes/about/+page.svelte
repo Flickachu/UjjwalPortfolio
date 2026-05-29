@@ -1,13 +1,7 @@
 <script>
   import { cms } from '$lib/cms/cms.svelte.js';
   import CmsRenderer from '$lib/cms/CmsRenderer.svelte';
-  import SEO from '$lib/components/SEO.svelte';
 </script>
-
-<SEO 
-  title={cms.data?.pages?.about?.seo?.title || 'About - Studio'}
-  description={cms.data?.pages?.about?.seo?.description}
-/>
 
 <main>
   {#if cms.data?.pages?.about}
