@@ -12,6 +12,7 @@
     path.replace('/', '')
   );
 
+  // @ts-ignore - pageKey is dynamic, pages object keys are explicitly typed
   let pageSeo = $derived(cms.data?.pages?.[pageKey]?.seo);
 
   let globalTitle = 'Ujjwal Saikia | Web Designer & Digital Strategist';

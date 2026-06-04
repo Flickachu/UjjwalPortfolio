@@ -6,12 +6,13 @@
     path = "pages.home.sections.0",
     eyebrow = "WEB DESIGN & STRATEGY PARTNER",
     title = "WEBSITES\nTHAT WIN\nTRUST\nBEFORE THE\nFIRST CALL.",
-    lead = "Strategy-led websites for founders and brands who want more than pretty - they want performance.",
+    lead = "Strategy-led websites for founders and brands who want more than pretty they want performance.",
     cta = "BOOK A FREE STRATEGY CALL"
   } = $props();
 
   const isAdmin = $derived(typeof window !== 'undefined' && window.location.pathname.startsWith('/admin'));
 
+  /** @param {string} text */
   function formatTitle(text) {
     if (!text) return '';
     return text
@@ -85,7 +86,6 @@ Development.</p>
           </div>
 
           <div class="preview-footer">
-            <span class="footer-label">OUR WORK</span>
             <div class="barcode">
               <span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span>
             </div>
@@ -95,9 +95,9 @@ Development.</p>
         <!-- Metrics Card -->
         <div class="stack-item metrics-card">
           <div class="metric-quad">
-            <div class="m-item"><span class="m-val">98</span><span class="m-label">PERFORMANCE</span></div>
+            <div class="m-item"><span class="m-val">100</span><span class="m-label">PERFORMANCE</span></div>
             <div class="m-item"><span class="m-val">100</span><span class="m-label">SEO SCORE</span></div>
-            <div class="m-item"><span class="m-val">90</span><span class="m-label">SPEED</span></div>
+            <div class="m-item"><span class="m-val">98</span><span class="m-label">SPEED</span></div>
             <div class="m-item"><span class="m-val">100</span><span class="m-label">SATISFACTION</span></div>
           </div>
         </div>
@@ -144,7 +144,7 @@ Development.</p>
     text-transform: uppercase;
   }
 
-  .highlight-bg {
+  :global(.highlight-bg) {
     display: inline-block;
     background: var(--accent);
     color: var(--ink);
@@ -315,12 +315,6 @@ Development.</p>
     display: flex;
     flex-direction: column;
     gap: 12px;
-  }
-
-  .footer-label {
-    font-size: 0.65rem;
-    font-weight: 900;
-    letter-spacing: 0.1em;
   }
 
   .barcode {
